@@ -18,11 +18,11 @@ export class StudentsComponent implements OnInit {
       ngOnInit() {
       }
 
-    public loginFB() {
-        this.client.login("facebook").done((results: any) => {
-            alert(`You are now logged in as: ${results.userId}`);
-        }, (err: any) => {
-            alert(`Error: ${err}`);
-        });
-    }
+      login(loginType:string) {
+          this.client.login(loginType).done((results: any) => {
+              alert(`You are now logged (${loginType}) in as: ${results.userId}`);
+          }, (err: any) => {
+              alert(`Error: ${err}`);
+          });
+      }
 }
